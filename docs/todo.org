@@ -1,0 +1,9 @@
+* TODO Switch to rspec-rails for testing
+
+* TODO Add rubocop-govuk
+
+* TODO Set up rubymine nicely
+* TODO rails scaffold the initial database schema
+
+
+
