@@ -1,0 +1,27 @@
+<%= form_with(model: seniority, local: true) do |form| %>
+  <% if seniority.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(seniority.errors.count, "error") %> prohibited this seniority from being saved:</h2>
+
+      <ul>
+        <% seniority.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prefix %>
+    <%= form.text_area :prefix %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
