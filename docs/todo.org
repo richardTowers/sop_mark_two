@@ -1,4 +1,4 @@
-* TODO Switch to rspec-rails for testing
+* DONE Switch to rspec-rails for testing
 
 * TODO Add rubocop-govuk
 
