@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :role_id %>
-    <%= form.text_field :role_id %>
+    <%= form.select :role_id, @roles.map {|role| [role.name, role.id]}.prepend(nil) %>
   </div>
 
   <div class="field">
     <%= form.label :seniority_id %>
-    <%= form.text_field :seniority_id %>
+    <%= form.select :seniority_id, @seniorities.map {|seniority| [seniority.name, seniority.id]}.prepend(nil) %>
   </div>
 
   <div class="actions">

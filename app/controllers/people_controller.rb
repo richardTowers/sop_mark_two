@@ -1,5 +1,7 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: %i[show edit update destroy]
+  before_action :set_roles, only: %i[new edit update create]
+  before_action :set_seniorities, only: %i[new edit update create]
 
   # GET /people
   # GET /people.json
@@ -64,6 +66,14 @@ private
   # Use callbacks to share common setup or constraints between actions.
   def set_person
     @person = Person.find(params[:id])
+  end
+
+  def set_roles
+    @roles = Role.all
+  end
+
+  def set_seniorities
+    @seniorities = Seniority.all
   end
 
   # Only allow a list of trusted parameters through.
