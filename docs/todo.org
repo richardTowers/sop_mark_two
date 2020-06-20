@@ -2,10 +2,10 @@
 * DONE Add rubocop-govuk
 * DONE Set up rubymine nicely
 * DONE rails scaffold the initial database schema
+* DONE Allow seniorities to be ordered
 * TODO Separate contractors and civil servants
 * TODO Add specialities (e.g. frontend)
 * TODO Allow proportional team assignments
 * TODO Allow for part time people
 * TODO Allow for team roles (like tech lead)
-* TODO Allow seniorities to be ordered
 
