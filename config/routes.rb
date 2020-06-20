@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "home#index"
   resources :people
   resources :seniorities
   resources :roles
