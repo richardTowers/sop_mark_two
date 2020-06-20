@@ -4,7 +4,7 @@ class SenioritiesController < ApplicationController
   # GET /seniorities
   # GET /seniorities.json
   def index
-    @seniorities = Seniority.all
+    @seniorities = Seniority.order(:sort_index).all
   end
 
   # GET /seniorities/1
@@ -68,6 +68,6 @@ private
 
   # Only allow a list of trusted parameters through.
   def seniority_params
-    params.require(:seniority).permit(:name, :prefix)
+    params.require(:seniority).permit(:name, :prefix, :sort_index)
   end
 end

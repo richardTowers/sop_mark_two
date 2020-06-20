@@ -12,9 +12,8 @@ RSpec.describe "seniorities/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", seniorities_path, "post" do
-      assert_select "textarea[name=?]", "seniority[name]"
-
-      assert_select "textarea[name=?]", "seniority[prefix]"
+      assert_select "input[name=?]", "seniority[name]"
+      assert_select "input[name=?]", "seniority[prefix]"
     end
   end
 end
