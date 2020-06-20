@@ -6,7 +6,10 @@ class TeamAssignmentsController < ApplicationController
   # GET /team_assignments
   # GET /team_assignments.json
   def index
-    @team_assignments = TeamAssignment.all
+    @team_assignments = TeamAssignment
+      .includes(:team, :person)
+      .order("teams.name, people.current_name")
+      .all
   end
 
   # GET /team_assignments/1
@@ -69,11 +72,11 @@ private
   end
 
   def set_teams
-    @teams = Team.all
+    @teams = Team.all.order(:name)
   end
 
   def set_people
-    @people = Person.all
+    @people = Person.all.order(:current_name)
   end
 
   # Only allow a list of trusted parameters through.

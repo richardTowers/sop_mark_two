@@ -1,4 +1,11 @@
 * DONE Switch to rspec-rails for testing
 * DONE Add rubocop-govuk
 * DONE Set up rubymine nicely
-* TODO rails scaffold the initial database schema
+* DONE rails scaffold the initial database schema
+* TODO Separate contractors and civil servants
+* TODO Add specialities (e.g. frontend)
+* TODO Allow proportional team assignments
+* TODO Allow for part time people
+* TODO Allow for team roles (like tech lead)
+* TODO Allow seniorities to be ordered
+
