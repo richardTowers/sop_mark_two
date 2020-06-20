@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :team_assignments
   root "home#index"
   resources :people
   resources :seniorities

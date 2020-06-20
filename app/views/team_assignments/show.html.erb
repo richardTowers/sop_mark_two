@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @team_assignment.person.current_name %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @team_assignment.team.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @team_assignment.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @team_assignment.end_time %>
+</p>
+
+<%= link_to 'Edit', edit_team_assignment_path(@team_assignment) %> |
+<%= link_to 'Back', team_assignments_path %>
