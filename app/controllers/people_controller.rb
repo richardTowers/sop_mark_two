@@ -6,7 +6,10 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.all
+    @people = Person
+      .includes(:role, :seniority)
+      .order("seniorities.sort_index desc, current_name")
+      .all
   end
 
   # GET /people/1
