@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Role</th>
       <th>Person</th>
       <th>Team</th>
       <th>Start time</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @team_assignments.each do |team_assignment| %>
       <tr>
+        <td><%= team_assignment.person.seniority.prefix %><%= team_assignment.person.role.short_name %></td>
         <td><%= team_assignment.person.current_name %></td>
         <td><%= team_assignment.team.name %></td>
         <td><%= team_assignment.start_time %></td>

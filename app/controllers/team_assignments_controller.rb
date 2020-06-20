@@ -7,8 +7,8 @@ class TeamAssignmentsController < ApplicationController
   # GET /team_assignments.json
   def index
     @team_assignments = TeamAssignment
-      .includes(:team, :person)
-      .order("teams.name, people.current_name")
+      .includes(:team, person: :seniority)
+      .order("teams.name, seniorities.sort_index desc, people.current_name")
       .all
   end
 
