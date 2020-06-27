@@ -7,7 +7,7 @@ class PeopleController < ApplicationController
   # GET /people.json
   def index
     @people = Person
-      .includes(:role, :seniority)
+      .includes(:role, :seniority, :tags)
       .order("seniorities.sort_index desc, current_name")
       .all
   end
@@ -68,7 +68,7 @@ private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_person
-    @person = Person.find(params[:id])
+    @person = Person.includes(:role, :seniority, :tags).find(params[:id])
   end
 
   def set_roles

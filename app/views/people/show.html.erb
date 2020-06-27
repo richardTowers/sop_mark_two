@@ -7,13 +7,22 @@
 
 <p>
   <strong>Role:</strong>
-  <%= @person.role_id %>
+  <%= @person.role.name %>
 </p>
 
 <p>
   <strong>Seniority:</strong>
-  <%= @person.seniority_id %>
+  <%= @person.seniority.name %>
 </p>
+
+<p>
+  <strong>Tags:</strong>
+</p>
+<ul>
+  <% @person.tags.each do |tag| %>
+  <li><%= tag.value %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>

@@ -76,7 +76,7 @@ private
   end
 
   def set_people
-    @people = Person.all.order(:current_name)
+    @people = Person.includes(:role, :seniority, :tags).all.order(:current_name)
   end
 
   # Only allow a list of trusted parameters through.
