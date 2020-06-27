@@ -1,24 +1,6 @@
-# README
+# SOP MkII
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![.github/workflows/ci.yml](https://github.com/richardTowers/sop_mark_two/workflows/.github/workflows/ci.yml/badge.svg)
 
-Things you may want to cover:
+Noodling around the idea of an HR tool that actually meets some of my needs.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
