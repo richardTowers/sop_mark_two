@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_20_150500) do
+ActiveRecord::Schema.define(version: 2020_06_27_105909) do
 
   create_table "people", force: :cascade do |t|
     t.string "current_name"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2020_06_20_150500) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["role_id"], name: "index_people_on_role_id"
     t.index ["seniority_id"], name: "index_people_on_seniority_id"
+  end
+
+  create_table "person_tags", force: :cascade do |t|
+    t.integer "person_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["person_id"], name: "index_person_tags_on_person_id"
+    t.index ["tag_id"], name: "index_person_tags_on_tag_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -35,6 +44,12 @@ ActiveRecord::Schema.define(version: 2020_06_20_150500) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "sort_index", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "team_assignments", force: :cascade do |t|
@@ -59,6 +74,8 @@ ActiveRecord::Schema.define(version: 2020_06_20_150500) do
 
   add_foreign_key "people", "roles"
   add_foreign_key "people", "seniorities"
+  add_foreign_key "person_tags", "people"
+  add_foreign_key "person_tags", "tags"
   add_foreign_key "team_assignments", "people"
   add_foreign_key "team_assignments", "teams"
 end

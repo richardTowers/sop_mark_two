@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :person_tags
+  resources :tags
   resources :team_assignments
   root "home#index"
   resources :people

@@ -18,7 +18,7 @@ RSpec.describe "team_assignments/index", type: :view do
         current_name: "Some other person",
         role: dev,
         seniority: senior,
-      )
+      ),
     ])
   end
 
