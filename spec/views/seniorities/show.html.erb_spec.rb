@@ -5,6 +5,7 @@ RSpec.describe "seniorities/show", type: :view do
     @seniority = assign(:seniority, Seniority.create!(
                                       name: "MyText",
                                       prefix: "MyText",
+                                      sort_index: 0,
                                     ))
   end
 

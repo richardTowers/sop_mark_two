@@ -6,10 +6,12 @@ RSpec.describe "seniorities/index", type: :view do
       Seniority.create!(
         name: "Senior",
         prefix: "S",
+        sort_index: 0,
       ),
       Seniority.create!(
         name: "Junior",
         prefix: "J",
+        sort_index: 0,
       ),
     ])
   end

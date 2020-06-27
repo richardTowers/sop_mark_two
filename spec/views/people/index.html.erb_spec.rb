@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "people/index", type: :view do
   before do
     role = Role.create!(name: "Developer", short_name: "DEV")
-    seniority = Seniority.create!(name: "Senior", prefix: "S")
+    seniority = Seniority.create!(name: "Senior", prefix: "S", sort_index: 0)
     assign(:people, [
       Person.create!(
         current_name: "Name 1",

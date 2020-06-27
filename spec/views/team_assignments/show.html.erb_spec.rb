@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "team_assignments/show", type: :view do
   before do
     dev = Role.create!(name: "Developer", short_name: "DEV")
-    senior = Seniority.create!(name: "Senior")
+    senior = Seniority.create!(name: "Senior", sort_index: 0)
     person = Person.create!(
       current_name: "Some person",
       role: dev,

@@ -9,7 +9,7 @@ RSpec.describe "team_assignments/edit", type: :view do
     assign(:people, [Person.create!(
       current_name: "Some person",
       role: Role.create!(name: "Developer", short_name: "DEV"),
-      seniority: Seniority.create!(name: "Senior"),
+      seniority: Seniority.create!(name: "Senior", sort_index: 0),
     )])
   end
 

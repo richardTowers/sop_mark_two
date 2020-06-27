@@ -19,6 +19,7 @@ RSpec.describe "/seniorities", type: :request do
     {
       name: "Senior",
       prefix: "S",
+      sort_index: 0,
     }
   end
 

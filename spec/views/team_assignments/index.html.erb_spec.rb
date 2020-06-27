@@ -7,7 +7,7 @@ RSpec.describe "team_assignments/index", type: :view do
 
   let(:people) do
     dev = Role.create!(name: "Developer", short_name: "DEV")
-    senior = Seniority.create!(name: "Senior")
+    senior = Seniority.create!(name: "Senior", sort_index: 0)
     assign(:people, [
       Person.create!(
         current_name: "Some person",

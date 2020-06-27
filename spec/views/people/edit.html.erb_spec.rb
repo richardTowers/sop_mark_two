@@ -13,6 +13,7 @@ RSpec.describe "people/edit", type: :view do
     seniority = Seniority.create!(
       name: "Senior",
       prefix: "S",
+      sort_index: 0,
     )
     assign(:seniorities, [seniority])
   end

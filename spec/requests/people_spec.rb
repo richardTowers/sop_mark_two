@@ -17,7 +17,7 @@ RSpec.describe "/people", type: :request do
   # adjust the attributes here as well.
   let(:valid_attributes) do
     role = Role.create!(name: "Developer", short_name: "DEV")
-    seniority = Seniority.create!(name: "Senior", prefix: "S")
+    seniority = Seniority.create!(name: "Senior", prefix: "S", sort_index: 0)
     {
       current_name: "Isthildur",
       role: role,

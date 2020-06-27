@@ -17,7 +17,7 @@ RSpec.describe "/team_assignments", type: :request do
   # adjust the attributes here as well.
   let(:valid_attributes) do
     role = Role.create!(name: "Developer", short_name: "DEV")
-    seniority = Seniority.create!(name: "Senior", prefix: "S")
+    seniority = Seniority.create!(name: "Senior", prefix: "S", sort_index: 0)
     person = Person.create!(current_name: "Some person", role: role, seniority: seniority)
     team = Team.create!(name: "Some team", start_time: "2020-01-01")
     {

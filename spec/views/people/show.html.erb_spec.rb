@@ -9,6 +9,7 @@ RSpec.describe "people/show", type: :view do
     seniority = Seniority.create!(
       name: "Senior",
       prefix: "S",
+      sort_index: 0,
     )
     assign(:person, Person.create!(
                       current_name: "Current Name",
