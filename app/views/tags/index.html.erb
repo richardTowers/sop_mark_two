@@ -1,27 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tags</h1>
+<h1 class="govuk-heading-l">Tags</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Value</th>
-      <th colspan="3"></th>
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Value</th>
+      <th scope="col" class="govuk-table__header" colspan="3"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="govuk-table__body">
     <% @tags.each do |tag| %>
-      <tr>
-        <td><%= tag.value %></td>
-        <td><%= link_to 'Show', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><%= tag.value %></td>
+        <td class="govuk-table__cell"><%= link_to 'Show', tag %></td>
+        <td class="govuk-table__cell"><%= link_to 'Edit', edit_tag_path(tag) %></td>
+        <td class="govuk-table__cell"><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Tag', new_tag_path %>
+<p><%= link_to 'New Tag', new_tag_path %></p>

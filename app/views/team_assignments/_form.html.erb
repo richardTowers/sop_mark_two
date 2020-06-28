@@ -1,37 +1,42 @@
 <%= form_with(model: team_assignment, local: true) do |form| %>
   <% if team_assignment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(team_assignment.errors.count, "error") %> prohibited this team_assignment from being saved:</h2>
-
-      <ul>
-        <% team_assignment.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        <%= pluralize(team_assignment.errors.count, "error") %> prohibited this team_assignment from being saved:
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <% team_assignment.errors.full_messages.each do |message| %>
+            <li>
+              <%= message %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :person_id %>
-    <%= form.select :person_id, @people.map {|person| [person.current_name, person.id]}.prepend(nil) %>
+  <div class="govuk-form-group">
+    <%= form.label :person_id, class: "govuk-label" %>
+    <%= form.collection_select :person_id, @people, :id, :current_name, { prompt: true }, class: "govuk-select" %>
   </div>
 
-  <div class="field">
-    <%= form.label :team_id %>
-    <%= form.select :team_id, @teams.map {|team| [team.name, team.id]}.prepend(nil) %>
+  <div class="govuk-form-group">
+    <%= form.label :team_id, class: "govuk-label" %>
+    <%= form.collection_select :team_id, @teams, :id, :name, { prompt: true }, class: "govuk-select" %>
   </div>
 
-  <div class="field">
-    <%= form.label :start_time %>
+  <div class="govuk-form-group">
+    <%= form.label :start_time, class: "govuk-label" %>
     <%= form.date_select :start_time %>
   </div>
 
-  <div class="field">
-    <%= form.label :end_time %>
+  <div class="govuk-form-group">
+    <%= form.label :end_time, class: "govuk-label" %>
     <%= form.date_select :end_time %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="govuk-form-group">
+    <%= form.submit class: "govuk-button" %>
   </div>
 <% end %>

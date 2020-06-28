@@ -18,11 +18,14 @@
 <p>
   <strong>Tags:</strong>
 </p>
-<ul>
+<ul class="govuk-list govuk-list--bullet">
   <% @person.tags.each do |tag| %>
   <li><%= tag.value %></li>
   <% end %>
 </ul>
 
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<p>
+  <%= link_to 'Edit', edit_person_path(@person) %>
+  |
+  <%= link_to 'Back', people_path %>
+</p>

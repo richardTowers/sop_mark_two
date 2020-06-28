@@ -1,27 +1,32 @@
 <%= form_with(model: person_tag, local: true) do |form| %>
   <% if person_tag.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(person_tag.errors.count, "error") %> prohibited this person_tag from being saved:</h2>
-
-      <ul>
-        <% person_tag.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        <%= pluralize(person_tag.errors.count, "error") %> prohibited this person from being saved:
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <% person_tag.errors.full_messages.each do |message| %>
+            <li>
+              <%= message %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :person_id %>
-    <%= form.select :person_id, @people.map {|person| [person.current_name, person.id]}.prepend(nil) %>
+  <div class="govuk-form-group">
+    <%= form.label :person_id, class: "govuk-label" %>
+    <%= form.collection_select :person_id, @people, :id, :current_name, { prompt: true }, class: "govuk-select" %>
   </div>
 
-  <div class="field">
-    <%= form.label :tag_id %>
-    <%= form.select :tag_id, @tags.map {|tag| [tag.value, tag.id]}.prepend(nil) %>
+  <div class="govuk-form-group">
+    <%= form.label :tag_id, class: "govuk-label" %>
+    <%= form.collection_select :tag_id, @tags, :id, :value, { prompt: true }, class: "govuk-select" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="govuk-form-group">
+    <%= form.submit class: "govuk-button" %>
   </div>
 <% end %>

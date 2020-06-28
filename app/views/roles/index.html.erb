@@ -1,29 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Roles</h1>
+<h1 class="govuk-heading-l">Roles</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Short name</th>
-      <th colspan="3"></th>
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Short name</th>
+      <th scope="col" class="govuk-table__header" colspan="3"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="govuk-table__body">
     <% @roles.each do |role| %>
-      <tr>
-        <td><%= role.name %></td>
-        <td><%= role.short_name %></td>
-        <td><%= link_to 'Show', role %></td>
-        <td><%= link_to 'Edit', edit_role_path(role) %></td>
-        <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><%= role.name %></td>
+        <td class="govuk-table__cell"><%= role.short_name %></td>
+        <td class="govuk-table__cell"><%= link_to 'Show', role %></td>
+        <td class="govuk-table__cell"><%= link_to 'Edit', edit_role_path(role) %></td>
+        <td class="govuk-table__cell"><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Role', new_role_path %>
+<p><%= link_to 'New Role', new_role_path %></p>

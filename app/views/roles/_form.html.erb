@@ -1,27 +1,32 @@
 <%= form_with(model: role, local: true) do |form| %>
   <% if role.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(role.errors.count, "error") %> prohibited this role from being saved:</h2>
-
-      <ul>
-        <% role.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        <%= pluralize(role.errors.count, "error") %> prohibited this role from being saved:
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <% role.errors.full_messages.each do |message| %>
+            <li>
+              <%= message %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_area :name %>
+  <div class="govuk-form-group">
+    <%= form.label :name, class: "govuk-label" %>
+    <%= form.text_field :name, class: "govuk-input govuk-!-width-one-half" %>
   </div>
 
-  <div class="field">
-    <%= form.label :short_name %>
-    <%= form.text_area :short_name %>
+  <div class="govuk-form-group">
+    <%= form.label :short_name, class: "govuk-label" %>
+    <%= form.text_field :short_name, class: "govuk-input govuk-!-width-one-half" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="govuk-form-group">
+    <%= form.submit class: "govuk-button" %>
   </div>
 <% end %>
