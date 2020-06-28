@@ -5,6 +5,8 @@
 * DONE Allow seniorities to be ordered
 * DONE Separate contractors and civil servants
 * DONE Add specialities (e.g. frontend)
+* DONE Add GOV.UK styles
+* TODO Update generator templates to product GOV.UK styles
 * TODO Allow proportional team assignments
 * TODO Allow for part time people
 * TODO Allow for team roles (like tech lead)
