@@ -1,0 +1,5 @@
+<h1 class="govuk-heading-l">New <%= singular_table_name.titleize %></h1>
+
+<%%= render 'form', <%= singular_table_name %>: @<%= singular_table_name %> %>
+
+<p><%%= link_to 'Back', <%= index_helper %>_path %></p>

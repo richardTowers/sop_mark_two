@@ -1,0 +1,42 @@
+<%%= form_with(model: <%= model_resource_name %>, local: true) do |form| %>
+  <%% if <%= singular_table_name %>.errors.any? %>
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        <%%= pluralize(<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <%% <%= singular_table_name %>.errors.full_messages.each do |message| %>
+          <li>
+              <%= message %>
+            </li>
+          <%% end %>
+        </ul>
+      </div>
+    </div>
+  <%% end %>
+
+<% attributes.each do |attribute| -%>
+  <div class="govuk-form-group">
+<% if attribute.password_digest? -%>
+    <%%= form.label :password, class: "govuk-label" %>
+    <%%= form.password_field :password, class: "govuk-input govuk-!-width-one-half" %>
+  </div>
+
+  <div class="govuk-form-group">
+    <%%= form.label :password_confirmation, class: "govuk-label" %>
+    <%%= form.password_field :password_confirmation, class: "govuk-input govuk-!-width-one-half" %>
+<% elsif attribute.attachments? -%>
+    <%%= form.label :<%= attribute.column_name %>, class: "govuk-label" %>
+    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, multiple: true %>
+<% else -%>
+    <%%= form.label :<%= attribute.column_name %>, class: "govuk-label" %>
+    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class: "govuk-input govuk-!-width-one-half" %>
+<% end -%>
+  </div>
+
+<% end -%>
+  <div class="govuk-form-group">
+    <%%= form.submit class: "govuk-button" %>
+  </div>
+<%% end %>
