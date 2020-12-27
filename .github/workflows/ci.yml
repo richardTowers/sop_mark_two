@@ -5,17 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-ruby@v1
+    - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '2.7'
+        bundler-cache: true
     - uses: actions/cache@v2
       with:
-        path: |
-          vendor/bundle
-          node_modules
-        key: bundle-${{ hashFiles('**/Gemfile.lock')}}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: bundle
+        path: node_modules
+        key: yarn-${{ hashFiles('**/yarn.lock') }}
     - run: sudo apt-get install libsqlite3-dev
-    - run: bundle install --jobs 4 --retry 3 --deployment
+    - run: bundle install --jobs 4 --retry 3
     - run: npm install
     - run: bundle exec rake
