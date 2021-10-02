@@ -32,6 +32,18 @@
   </div>
 
   <div class="govuk-form-group">
+    <%= form.label :tags, class: "govuk-label" %>
+    <div class="govuk-checkboxes">
+      <%= form.collection_check_boxes :all_tags, Tag.distinct, :id, :value do |checkbox| %>
+        <div class="govuk-checkboxes__item">
+          <%= checkbox.check_box(class: "govuk-checkboxes__input") %>
+          <%= checkbox.label(class: "govuk-label govuk-checkboxes__label") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="govuk-form-group">
     <%= form.submit class: "govuk-button" %>
   </div>
 <% end %>

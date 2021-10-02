@@ -81,6 +81,6 @@ private
 
   # Only allow a list of trusted parameters through.
   def person_params
-    params.require(:person).permit(:current_name, :role_id, :seniority_id)
+    params.require(:person).permit(:current_name, :role_id, :seniority_id, all_tags: [])
   end
 end

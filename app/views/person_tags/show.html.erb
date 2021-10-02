@@ -13,5 +13,7 @@
 <p>
   <%= link_to 'Edit', edit_person_tag_path(@person_tag) %>
   |
+  <%= link_to 'Remove tag from person', @person_tag, method: :delete, data: { confirm: 'Are you sure?' } %>
+  |
   <%= link_to 'Back', person_tags_path %>
 </p>
