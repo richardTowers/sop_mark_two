@@ -68,7 +68,7 @@ private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_person
-    @person = Person.includes(:role, :seniority, :tags).find(params[:id])
+    @person = Person..find_by_sql("select * from people where id='#{params[:id]}'")
   end
 
   def set_roles
