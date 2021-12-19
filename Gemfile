@@ -3,12 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.1"
 
+gem 'cssbundling-rails'
 gem "jbuilder", "~> 2.7"
 gem "puma", "~> 4.1"
 gem "rails", "~> 7.0.0"
 gem "sass-rails", ">= 6"
 gem "sqlite3", "~> 1.4"
-gem "webpacker", "~> 4.0"
 
 # ffi 1.13 seems to have some issues on macos
 # See https://github.com/ffi/ffi/issues/791
