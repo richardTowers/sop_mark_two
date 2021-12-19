@@ -5,7 +5,7 @@ ruby "3.0.1"
 
 gem "jbuilder", "~> 2.7"
 gem "puma", "~> 4.1"
-gem "rails", "~> 6.0.3", ">= 6.0.3.1"
+gem "rails", "~> 7.0.0"
 gem "sass-rails", ">= 6"
 gem "sqlite3", "~> 1.4"
 gem "webpacker", "~> 4.0"
