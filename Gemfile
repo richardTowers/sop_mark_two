@@ -7,7 +7,7 @@ gem 'cssbundling-rails'
 gem "jbuilder", "~> 2.7"
 gem "puma", "~> 4.1"
 gem "rails", "~> 7.0.0"
-gem "sass-rails", ">= 6"
+gem "sprockets-rails", "~> 3.4"
 gem "sqlite3", "~> 1.4"
 
 # ffi 1.13 seems to have some issues on macos
