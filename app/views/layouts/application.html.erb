@@ -13,20 +13,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/favicon.ico" type="image/x-icon">
-<%if false %>
-  <link rel="mask-icon" href="<%= asset_url('media/images/govuk-mask-icon.svg') %>" color="blue">
-  <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_url('media/images/govuk-apple-touch-icon-180x180.png') %>">
-  <link rel="apple-touch-icon" sizes="167x167" href="<%= asset_url('media/images/govuk-apple-touch-icon-167x167.png') %>">
-  <link rel="apple-touch-icon" sizes="152x152" href="<%= asset_url('media/images/govuk-apple-touch-icon-152x152.png') %>">
-  <link rel="apple-touch-icon" href="<%= asset_url('media/images/govuk-apple-touch-icon.png') %>">
+  <link rel="mask-icon" href="<%= asset_url('images/govuk-mask-icon.svg') %>" color="blue">
+  <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_url('images/govuk-apple-touch-icon-180x180.png') %>">
+  <link rel="apple-touch-icon" sizes="167x167" href="<%= asset_url('images/govuk-apple-touch-icon-167x167.png') %>">
+  <link rel="apple-touch-icon" sizes="152x152" href="<%= asset_url('images/govuk-apple-touch-icon-152x152.png') %>">
+  <link rel="apple-touch-icon" href="<%= asset_url('images/govuk-apple-touch-icon.png') %>">
 
-  <%= stylesheet_tag 'govuk', 'data-turbolinks-track': 'reload' %>
+  <meta property="og:image" content="<%= asset_url('images/govuk-opengraph-image.png') %>">
 
-  <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-  <meta property="og:image" content="<%= asset_url('media/images/govuk-opengraph-image.png') %>">
-<% end %>
-    <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "application" %>
 </head>
 
 <body class="govuk-template__body app-body-class" data-test="My value" data-other="report:details">
@@ -69,9 +64,6 @@
 </div>
 
 <footer class="govuk-footer " role="contentinfo"></footer>
-<% if false %>
-<%= javascript_tag 'govuk', 'data-turbolinks-track': 'reload' %>
-<% end %>
 </body>
 
 </html>
