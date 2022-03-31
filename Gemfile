@@ -5,7 +5,7 @@ ruby "3.0.1"
 
 gem 'cssbundling-rails'
 gem "jbuilder", "~> 2.7"
-gem "puma", "~> 4.1"
+gem "puma", "~> 4.3"
 gem "rails", "~> 7.0.0"
 gem "sprockets-rails", "~> 3.4"
 gem "sqlite3", "~> 1.4"
